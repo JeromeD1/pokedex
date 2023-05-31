@@ -32,10 +32,9 @@ function App() {
     }
     ,
     {
-      name: "pikachu",
-      imgSrc:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
-        backColor: "black" 
+      name:"pikachu",
+      imgSrc:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+      backColor: "rgb(255,100,100)" 
     },
     {
       name: "mew",
@@ -43,9 +42,33 @@ function App() {
     },
   ];
 
-  const pokemon = pokemonList[2].name;
-  const pokemonImage =  pokemonList.find(element => element.name === pokemon).imgSrc;
+  // const pokemon = pokemonList[2].name;
+  // const pokemonImage =  pokemonList.find(element => element.name === pokemon).imgSrc;
     
+  // const handleClick = (action) => {
+  //   if(action==="Suivant"){
+  //     if(count<pokemonList.length - 1){
+  //       setCount(count + 1);
+  //     }
+  //   } else if(action==="Precedant"){
+  //       if(count>0){  
+  //         setCount(count - 1);
+  //       }
+  //   }
+  // }
+
+
+  const handleClickSuivant = () => {
+      if(count<pokemonList.length - 1){
+        setCount(count + 1);
+      }
+  }
+
+  const handleClickPrecedant = () => {
+        if(count>0){  
+          setCount(count - 1);
+        }
+  }
 
   return (
     <>
@@ -54,7 +77,10 @@ function App() {
       <PokemonCard pokemons={pokemonList[1]}/>
       <PokemonCard pokemons={pokemonList[2]}/>
       <PokemonCard pokemons={pokemonList[3]}/>
-      <ButtonCard precedantSuivant="suivant"/>
+      <PokemonCard pokemons={pokemonList[count]}/>
+      {/* <ButtonCard precedantSuivant="Suivant"/> */}
+      <ButtonCard precedantSuivant="Precedant" onclick={handleClickPrecedant}/>
+      <ButtonCard precedantSuivant="Suivant" onclick={handleClickSuivant}/>
       </div>
       {/* <PokemonCard pokemon={pokemon} pokemonImage={pokemonImage} text1 ={}/> */}
     </>

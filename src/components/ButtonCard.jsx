@@ -1,19 +1,17 @@
 import PropTypes from "prop-types"
 import "./ButtonCard.css"
 
-const ButtonCard = ({precedantSuivant}) => {
+const ButtonCard = ({precedantSuivant, onclick}) => {
 
 
     return (
-        <div>
-        <button>{precedantSuivant}</button>
-        <p>poulet</p>
-        </div>
+        <button onClick={onclick}>{precedantSuivant}</button>
     )
 }
 
 ButtonCard.propTypes = {
     precedantSuivant: PropTypes.string.isRequired,
+    onclick:PropTypes.func.isRequired
 }
 
 
