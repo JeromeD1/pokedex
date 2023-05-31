@@ -1,5 +1,6 @@
  import PropTypes from "prop-types"
 
+import styles from "./PokemonCard.css"
 
 const PokemonCard = ({pokemons}) => {
 
@@ -8,7 +9,7 @@ const PokemonCard = ({pokemons}) => {
 
     return (
     <div>
-        <figure >
+        <figure style={{backgroundColor:pokemons.backColor}}>
             <img src= {pokemons.imgSrc}></img>
             <figcaption>{pokemons.name}</figcaption> 
         </figure>
@@ -19,7 +20,8 @@ const PokemonCard = ({pokemons}) => {
 PokemonCard.propTypes = {
       pokemons: PropTypes.shape({
         name: PropTypes.string.isRequired,
-        imgSrc: PropTypes.string
+        imgSrc: PropTypes.string,
+        backColor:PropTypes.string,
      }).isRequired
  }
 

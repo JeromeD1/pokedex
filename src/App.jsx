@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import styles from './App.css'
 import PokemonCard from './components/PokemonCard'
 import PropTypes from "prop-types"
 
@@ -13,14 +14,18 @@ function App() {
       name: "bulbasaur",
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+        backColor: "lightgreen"
     },
     {
       name: "mew",
+      backColor: "lightpink"
     },
     {
-    
+      name: "Charmander",
       imgSrc:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"
+      ,
+      backColor: "lightyellow"
     }
   ];
 
@@ -30,8 +35,12 @@ function App() {
 
   return (
     <>
+      <div className={styles.containerPokemonCards}>
+      <PokemonCard pokemons={pokemonList[0]}/>
       <PokemonCard pokemons={pokemonList[1]}/>
-      {/* <PokemonCard pokemon={pokemon} pokemonImage={pokemonImage}/> */}
+      <PokemonCard pokemons={pokemonList[2]}/>
+      </div>
+      {/* <PokemonCard pokemon={pokemon} pokemonImage={pokemonImage} text1 ={}/> */}
     </>
   )
 }
