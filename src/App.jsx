@@ -5,6 +5,7 @@ import './App.css'
 import styles from './App.css'
 import PokemonCard from './components/PokemonCard'
 import PropTypes from "prop-types"
+import ButtonCard from './components/ButtonCard'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,16 +18,29 @@ function App() {
         backColor: "lightgreen"
     },
     {
-      name: "mew",
-      backColor: "lightpink"
-    },
-    {
       name: "Charmander",
       imgSrc:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"
       ,
       backColor: "lightyellow"
     }
+    ,
+    {
+      name:"squirtle",
+      imgSrc: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+      backColor: "lightblue" 
+    }
+    ,
+    {
+      name: "pikachu",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+        backColor: "black" 
+    },
+    {
+      name: "mew",
+      backColor: "lightpink"
+    },
   ];
 
   const pokemon = pokemonList[2].name;
@@ -39,6 +53,8 @@ function App() {
       <PokemonCard pokemons={pokemonList[0]}/>
       <PokemonCard pokemons={pokemonList[1]}/>
       <PokemonCard pokemons={pokemonList[2]}/>
+      <PokemonCard pokemons={pokemonList[3]}/>
+      <ButtonCard precedantSuivant="suivant"/>
       </div>
       {/* <PokemonCard pokemon={pokemon} pokemonImage={pokemonImage} text1 ={}/> */}
     </>

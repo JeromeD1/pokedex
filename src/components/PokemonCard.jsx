@@ -10,7 +10,7 @@ const PokemonCard = ({pokemons}) => {
     return (
     <div>
         <figure style={{backgroundColor:pokemons.backColor}}>
-            <img src= {pokemons.imgSrc}></img>
+            {pokemons.imgSrc != null ? <img src= {pokemons.imgSrc}></img> : <p>???</p>}
             <figcaption>{pokemons.name}</figcaption> 
         </figure>
     </div>
