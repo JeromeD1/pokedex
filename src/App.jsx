@@ -17,16 +17,21 @@ function App() {
     {
       name: "mew",
     },
+    {
+    
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+    }
   ];
 
-  const pokemon = pokemonList[0].name;
+  const pokemon = pokemonList[2].name;
   const pokemonImage =  pokemonList.find(element => element.name === pokemon).imgSrc;
     
 
   return (
     <>
-      {/* <PokemonCard pokemons={pokemonList[0]}/> */}
-      <PokemonCard pokemon={pokemon} pokemonImage={pokemonImage}/>
+      <PokemonCard pokemons={pokemonList[1]}/>
+      {/* <PokemonCard pokemon={pokemon} pokemonImage={pokemonImage}/> */}
     </>
   )
 }
