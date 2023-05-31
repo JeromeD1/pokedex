@@ -6,6 +6,7 @@ import styles from './App.css'
 import PokemonCard from './components/PokemonCard'
 import PropTypes from "prop-types"
 import ButtonCard from './components/ButtonCard'
+import Navbar from './components/Navbar'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -38,6 +39,7 @@ function App() {
     },
     {
       name: "mew",
+      imgSrc: "https://w7.pngwing.com/pngs/898/80/png-transparent-pokemon-go-pokemon-x-and-y-mewtwo-pokemon-trading-card-game-pokemon-go-purple-mammal-cat-like-mammal-thumbnail.png",
       backColor: "lightpink"
     },
   ];
@@ -58,31 +60,18 @@ function App() {
   // }
 
 
-  const handleClickSuivant = () => {
-      if(count<pokemonList.length - 1){
-        setCount(count + 1);
-      }
-  }
-
-  const handleClickPrecedant = () => {
-        if(count>0){  
-          setCount(count - 1);
-        }
-  }
+  
 
   return (
     <>
       <div className={styles.containerPokemonCards}>
-      <PokemonCard pokemons={pokemonList[0]}/>
-      <PokemonCard pokemons={pokemonList[1]}/>
-      <PokemonCard pokemons={pokemonList[2]}/>
-      <PokemonCard pokemons={pokemonList[3]}/>
+      <Navbar count={count} setCount={setCount} pokemonList={pokemonList}/>
       <PokemonCard pokemons={pokemonList[count]}/>
-      {/* <ButtonCard precedantSuivant="Suivant"/> */}
-      <ButtonCard precedantSuivant="Precedant" onclick={handleClickPrecedant}/>
-      <ButtonCard precedantSuivant="Suivant" onclick={handleClickSuivant}/>
+    
+      {/* <ButtonCard precedantSuivant="Precedant" onclick={handleClickPrecedant}/>
+      <ButtonCard precedantSuivant="Suivant" onclick={handleClickSuivant}/> */}
       </div>
-      {/* <PokemonCard pokemon={pokemon} pokemonImage={pokemonImage} text1 ={}/> */}
+      
     </>
   )
 }
