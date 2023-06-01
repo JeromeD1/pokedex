@@ -1,12 +1,12 @@
 import PropTypes from "prop-types"
 import "./ButtonPokemon.css"
 
-const ButtonPokemon = ({name, onclick, keyPokemon}) => {
+const ButtonPokemon = ({name, onclick}) => {
 
 
     return (
    
-        <button onClick={onclick} key={keyPokemon}>{name}</button>
+        <button onClick={onclick}>{name}</button>
     )
 }
 

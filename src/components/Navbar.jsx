@@ -28,9 +28,9 @@ const Navbar = ({count, setCount, pokemonList}) => {
     
     return (
         <>
-        <div classname="buttonName">
+        <div className="buttonName">
             {pokemonList.map((pokemon) => (
-                <ButtonPokemon name={pokemon.name} onclick={handleClickPokemon} keyPokemon={pokemon.name}/>
+                <ButtonPokemon name={pokemon.name} onclick={handleClickPokemon} key={pokemon.name}/>
                 
             ))}
         </div>
