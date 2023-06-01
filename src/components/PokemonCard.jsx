@@ -11,7 +11,7 @@ const PokemonCard = ({pokemons}) => {
     <div>
         <figure style={{backgroundColor:pokemons.backColor}}>
             {pokemons.imgSrc != null ? <img src= {pokemons.imgSrc}></img> : <p>???</p>}
-            <figcaption>{pokemons.name}</figcaption> 
+            <figcaption style={{color:pokemons.figCaptionColor}}>{pokemons.name}</figcaption> 
         </figure>
     </div>
     );
@@ -22,6 +22,7 @@ PokemonCard.propTypes = {
         name: PropTypes.string.isRequired,
         imgSrc: PropTypes.string,
         backColor:PropTypes.string,
+        figCaptionColor:PropTypes.string,
      }).isRequired
  }
 
