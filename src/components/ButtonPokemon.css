@@ -1,0 +1,11 @@
+button {
+    padding: 10px;
+    background-color: azure;
+    border-radius: 10px;
+    min-width: 100px;
+    margin: 10px;
+}
+
+p {
+    color: white;
+}

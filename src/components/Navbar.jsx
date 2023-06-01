@@ -1,5 +1,6 @@
 import './Navbar.css'
 import ButtonCard from './ButtonCard';
+import ButtonPokemon from './ButtonPokemon';
 
 const Navbar = ({count, setCount, pokemonList}) => {
 
@@ -16,12 +17,29 @@ const Navbar = ({count, setCount, pokemonList}) => {
             console.log(count);
           }
     }
+
+    
+
+    const handleClickPokemon = (event) => {
+        const pokemonClique = event.target.textContent;
+        const indexPokemonClique = pokemonList.findIndex(pokemon => pokemon.name === pokemonClique);
+        setCount(indexPokemonClique);
+    }
     
     return (
+        <>
+        <div classname="buttonName">
+            {pokemonList.map((pokemon) => (
+                <ButtonPokemon name={pokemon.name} onclick={handleClickPokemon} keyPokemon={pokemon.name}/>
+                
+            ))}
+        </div>
+
         <div>
             <ButtonCard precedantSuivant="Precedant" onclick={handleClickPrecedant}/>
             <ButtonCard precedantSuivant="Suivant" onclick={handleClickSuivant}/>
         </div>
+        </>
     )
 }
 

@@ -7,6 +7,7 @@ import PokemonCard from './components/PokemonCard'
 import PropTypes from "prop-types"
 import ButtonCard from './components/ButtonCard'
 import Navbar from './components/Navbar'
+import ButtonPokemon from './components/ButtonPokemon'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -44,32 +45,16 @@ function App() {
     },
   ];
 
-  // const pokemon = pokemonList[2].name;
-  // const pokemonImage =  pokemonList.find(element => element.name === pokemon).imgSrc;
-    
-  // const handleClick = (action) => {
-  //   if(action==="Suivant"){
-  //     if(count<pokemonList.length - 1){
-  //       setCount(count + 1);
-  //     }
-  //   } else if(action==="Precedant"){
-  //       if(count>0){  
-  //         setCount(count - 1);
-  //       }
-  //   }
-  // }
-
-
+  // const [pokemonIndex, setPokemonIndex] = useState(count);
   
 
   return (
     <>
       <div className={styles.containerPokemonCards}>
-      <Navbar count={count} setCount={setCount} pokemonList={pokemonList}/>
+      <Navbar count={count} setCount={setCount} pokemonList={pokemonList} />
       <PokemonCard pokemons={pokemonList[count]}/>
+      {/* <PokemonCard pokemons={pokemonList[pokemonIndex]}/> */}
     
-      {/* <ButtonCard precedantSuivant="Precedant" onclick={handleClickPrecedant}/>
-      <ButtonCard precedantSuivant="Suivant" onclick={handleClickSuivant}/> */}
       </div>
       
     </>
